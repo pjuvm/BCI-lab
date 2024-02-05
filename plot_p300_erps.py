@@ -2,6 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 def get_events(rowcol_id, is_target):
+    #Args:
     event_sample = np.array(np.where(np.diff(rowcol_id) > 0)) + 1
     is_target_event = np.array([True if is_target[ind] else False for ind in event_sample[0]])
     return event_sample, is_target_event
